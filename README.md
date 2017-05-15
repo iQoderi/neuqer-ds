@@ -1,4 +1,4 @@
-# 快站前后端通用网络请求库 kz-ds
+# neuqer前后端通用网络请求库 kz-ds
 ## Overview
 
 kz-ds 是基于是基于fetch api 的一套前后端通用请求库,支持 `get, post, delete, put` 四种请求方式,默认请求头 `Content-type` 为 `application/x-www-form-urlencoded`
