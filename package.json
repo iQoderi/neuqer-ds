@@ -1,0 +1,87 @@
+{
+  "name": "kz-ds",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "test": "mocha ./test/index.js",
+    "test:request": "mocha ./test/index.test.js",
+    "consulInit:dev": "node ./init/consul.js --env=dev",
+    "lint": "./node_modules/.bin/eslint index.js ./lib/**",
+    "web:prod": "better-npm-run web:prod",
+    "node:prod": "better-npm-run node:prod",
+    "web:dev": "better-npm-run web:dev",
+    "node:dev": "better-npm-run node:dev",
+    "dev": "npm run clean && npm run node:dev && npm run web:dev",
+    "build": "npm run clean && npm run node:prod && npm run web:prod"
+  },
+  "betterScripts": {
+    "web:dev": {
+      "command": "webpack --config=webpack.client.config.js",
+      "env": {
+        "NODE_ENV": "dev",
+        "BUILD_ENV": "dev",
+        "useConsul": true
+      }
+    },
+    "node:dev": {
+      "command": "webpack --config=webpack.server.config.js",
+      "env": {
+        "NODE_ENV": "dev",
+        "BUILD_ENV": "dev",
+        "useConsul": true
+      }
+    },
+    "web:prod": {
+      "command": "webpack --config=webpack.client.config.js",
+      "env": {
+        "NODE_ENV": "prodution",
+        "BUILD_ENV": "prod",
+        "useConsul": true
+      }
+    },
+    "node:prod": {
+      "command": "webpack --config=webpack.server.config.js",
+      "env": {
+        "NODE_ENV": "prodution",
+        "BUILD_ENV": "dev",
+        "useConsul": true
+      }
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "publishConfig": {
+    "registry": "http://10.10.126.140:4873"
+  },
+  "dependencies": {
+    "es6-promise": "^4.1.0",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.4.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "cconf": "^1.0.2",
+    "chai": "^3.5.0",
+    "child_process": "^1.0.2",
+    "cross-env": "^4.0.0",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "gulp": "^3.9.1",
+    "kz-consul": "^1.0.9",
+    "mocha": "^3.2.0",
+    "optimist": "^0.6.1",
+    "path": "^0.12.7",
+    "run-sequence": "^1.2.2",
+    "webpack": "^2.2.1"
+  }
+}

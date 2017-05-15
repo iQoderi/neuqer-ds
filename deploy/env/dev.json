@@ -1,0 +1,9 @@
+{
+  "consul": {
+    "host": "consul.kuaizhan.sohuno.com",
+    "port": 80,
+    "wait": "8s",
+    "secure": false,
+    "keyPrefix": "plf/dev/"
+  }
+}

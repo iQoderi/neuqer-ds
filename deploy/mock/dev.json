@@ -1,0 +1,17 @@
+{
+  "user.login": {
+    "type": "post",
+    "url": "/user/login",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  },
+  "user.info": {
+    "type": "get",
+    "url": "/user/info"
+  },
+  "user.list": {
+    "type": "get",
+    "url": "/user/list"
+  }
+}
